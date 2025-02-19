@@ -84,7 +84,10 @@ const biyaHobe = validProposal ({ name: "shuvo", gender: "male", age: 20 },
     let result = {};
     let sumSecond = 0;
     for(let time of times){
-      sumSecond +=time
+      sumSecond +=time;
+      if(typeof time !=='number'){
+        result ="Invalid";
+      }
     }
     if(sumSecond <=3600){
       result.hour = Math.floor(sumSecond / 3600)
@@ -99,7 +102,11 @@ const biyaHobe = validProposal ({ name: "shuvo", gender: "male", age: 20 },
     }
     return result;
   }
-  const final = calculateSleepTime([1000, 499, 519, 300])
+  const final = calculateSleepTime(
+    [1000, 499, 519, 300]
+    
+
+  )
   console.log(final)
 
 
